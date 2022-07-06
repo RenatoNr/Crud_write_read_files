@@ -44,8 +44,8 @@ class Menu
 
         Console.Clear();
         Console.WriteLine("Cadastrar novo produto");
-        Console.WriteLine("\nDigite o código do produto:\n");
-        var id = Console.ReadLine();
+        //Console.WriteLine("\nDigite o código do produto:\n");
+       // var id = Console.ReadLine();
         Console.WriteLine("\nDigite o nome do produto:\n");
         var name = Console.ReadLine();
         Console.WriteLine("\nDigite a descrição do produto:\n");
@@ -55,7 +55,7 @@ class Menu
 
         Product newProduct = new Product()
         {
-            IdProduct = id,
+           // IdProduct = id,
             Name = name,
             Description = description,
             Price = Convert.ToDecimal(price),

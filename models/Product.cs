@@ -51,6 +51,18 @@ namespace read_write_files.models
 
         public void Create(Product product)
         {
+            List<string> numberLines = ReadAllLinesCSV(path);
+            //Implementação Id gerado automaticamente
+            if (numberLines.Count == 0)
+            {
+                product.IdProduct = "1";
+            }
+            else
+            {
+                var lastItem = numberLines[numberLines.Count - 1];
+                product.IdProduct = Convert.ToString(Convert.ToInt16(lastItem.Split(";")[0]) + 1);
+            }
+            
             string[] line = {Prepareline(product)};
             File.AppendAllLines(path, line);
         }
